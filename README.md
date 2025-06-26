@@ -1,4 +1,8 @@
-# React + TypeScript + Vite
+# vue-sample
+
+This boilerplate repository is solely designed for basic show casting, and in production, it will undergo more significant changes.
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

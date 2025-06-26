@@ -1,0 +1,218 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:00:00Z",
+      "updatedAt": "2024-06-23T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Smartphones",
+      "parentCategoryId": 1,
+      "description": "Mobile phones with advanced computing capabilities.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:05:00Z",
+      "updatedAt": "2024-06-23T10:05:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Laptops",
+      "parentCategoryId": 1,
+      "description": "Portable personal computers.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:10:00Z",
+      "updatedAt": "2024-06-23T10:10:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Books",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:15:00Z",
+      "updatedAt": "2024-06-23T10:15:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Fiction",
+      "parentCategoryId": 4,
+      "description": "Books with imaginative narratives.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:20:00Z",
+      "updatedAt": "2024-06-23T10:20:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Non-Fiction",
+      "parentCategoryId": 4,
+      "description": "Books based on facts and real events.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:25:00Z",
+      "updatedAt": "2024-06-23T10:25:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Home & Kitchen",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:30:00Z",
+      "updatedAt": "2024-06-23T10:30:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Cookware",
+      "parentCategoryId": 7,
+      "description": "Utensils for cooking.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:35:00Z",
+      "updatedAt": "2024-06-23T10:35:00Z"
+    },
+    {
+      "id": 9,
+      "name": "Furniture",
+      "parentCategoryId": 7,
+      "description": "Items for furnishing a house or room.",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:40:00Z",
+      "updatedAt": "2024-06-23T10:40:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Apparel",
+      "isActive": true,
+      "createdAt": "2024-06-23T10:45:00Z",
+      "updatedAt": "2024-06-23T10:45:00Z"
+    }
+  ],
+  "products": [
+    {
+      "name": "Wireless Ergonomic Mouse",
+      "description": "Comfortable wireless mouse with adjustable DPI for precise control.",
+      "brand": "ErgoTech",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 35.99,
+      "sku": "ERGO-M-001",
+      "stockQuantity": 150,
+      "lowStockThreshold": 30,
+      "createdAt": "2025-06-25T07:00:00Z",
+      "updatedAt": "2025-06-25T07:00:00Z"
+    },
+    {
+      "name": "4K Ultra HD Monitor 27-inch",
+      "description": "Stunning 4K resolution monitor perfect for design and gaming.",
+      "brand": "VisionView",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 399.99,
+      "sku": "VV-MON-4K27",
+      "stockQuantity": 75,
+      "lowStockThreshold": 15,
+      "createdAt": "2025-06-25T07:10:00Z",
+      "updatedAt": "2025-06-25T07:10:00Z"
+    },
+    {
+      "name": "Noise-Cancelling Headphones",
+      "description": "Immersive audio experience with active noise cancellation.",
+      "brand": "SoundBliss",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 129.0,
+      "sku": "SB-NC-HPN",
+      "stockQuantity": 200,
+      "lowStockThreshold": 40,
+      "createdAt": "2025-06-25T07:20:00Z",
+      "updatedAt": "2025-06-25T07:20:00Z"
+    },
+    {
+      "name": "Portable SSD 1TB",
+      "description": "High-speed external solid-state drive for fast data transfers.",
+      "brand": "SpeedyStore",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 89.5,
+      "sku": "SS-SSD-1TB",
+      "stockQuantity": 120,
+      "lowStockThreshold": 25,
+      "createdAt": "2025-06-25T07:30:00Z",
+      "updatedAt": "2025-06-25T07:30:00Z"
+    },
+    {
+      "name": "Smart Home Security Camera",
+      "description": "Wireless security camera with motion detection and night vision.",
+      "brand": "GuardTech",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 65.99,
+      "sku": "GT-CAM-001",
+      "stockQuantity": 90,
+      "lowStockThreshold": 20,
+      "createdAt": "2025-06-25T07:40:00Z",
+      "updatedAt": "2025-06-25T07:40:00Z"
+    },
+    {
+      "name": "Mechanical Gaming Keyboard",
+      "description": "Responsive mechanical keyboard with customizable RGB lighting.",
+      "brand": "GameForce",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 79.99,
+      "sku": "GF-KB-MECH",
+      "stockQuantity": 110,
+      "lowStockThreshold": 20,
+      "createdAt": "2025-06-25T07:50:00Z",
+      "updatedAt": "2025-06-25T07:50:00Z"
+    },
+    {
+      "name": "USB-C Hub Multiport Adapter",
+      "description": "Expand your laptop's connectivity with this versatile USB-C hub.",
+      "brand": "ConnectAll",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 25.0,
+      "sku": "CA-USBC-HUB",
+      "stockQuantity": 250,
+      "lowStockThreshold": 50,
+      "createdAt": "2025-06-25T08:00:00Z",
+      "updatedAt": "2025-06-25T08:00:00Z"
+    },
+    {
+      "name": "Wireless Charging Pad",
+      "description": "Fast and convenient wireless charging for compatible devices.",
+      "brand": "PowerUp",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 19.99,
+      "sku": "PU-WCPAD",
+      "stockQuantity": 180,
+      "lowStockThreshold": 35,
+      "createdAt": "2025-06-25T08:10:00Z",
+      "updatedAt": "2025-06-25T08:10:00Z"
+    },
+    {
+      "name": "Ergonomic Office Chair",
+      "description": "Comfortable and supportive chair for long hours at the desk.",
+      "brand": "SitSmart",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 189.0,
+      "sku": "SS-OCHAIR",
+      "stockQuantity": 60,
+      "lowStockThreshold": 10,
+      "createdAt": "2025-06-25T08:20:00Z",
+      "updatedAt": "2025-06-25T08:20:00Z"
+    },
+    {
+      "name": "Portable Bluetooth Speaker",
+      "description": "Compact and powerful speaker with rich sound and long battery life.",
+      "brand": "MusicMate",
+      "isActive": true,
+      "isSellable": true,
+      "basePrice": 45.0,
+      "sku": "MM-BTSPK",
+      "stockQuantity": 130,
+      "lowStockThreshold": 25,
+      "createdAt": "2025-06-25T08:30:00Z",
+      "updatedAt": "2025-06-25T08:30:00Z"
+    }
+  ]
+}
