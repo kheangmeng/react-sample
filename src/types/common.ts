@@ -9,3 +9,10 @@ export interface UpdateResponse {
   code: number
   data?: unknown
 }
+
+export interface Pagination {
+  page: number
+  limit: number
+  sortBy?: string
+  sortOrder?: 'asc' | 'desc'
+}

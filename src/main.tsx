@@ -13,6 +13,8 @@ import ListProductPage from './pages/products/ListProductPage.tsx';
 import CreateProductPage from './pages/products/CreateProductPage.tsx';
 import EditProductPage from './pages/products/EditProductPage.tsx';
 
+console.log('HCHC', import.meta.env.VITE_ENV);
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>

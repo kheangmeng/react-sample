@@ -16,8 +16,6 @@ export interface Product {
   barcode?: string
   stockQuantity?: number
   lowStockThreshold?: number
-  createdAt: string
-  updatedAt: string
 }
 
 export interface ProductResponse {
@@ -39,4 +37,33 @@ export interface ProductResponse {
   lowStockThreshold?: number
   createdAt: string
   updatedAt: string
+}
+
+export interface ProductList {
+  // id: number
+  name: string
+  description?: string
+  // category: Category
+  brand?: string
+  supplierId?: number
+  // tags?: string[]
+  isActive: boolean
+  isSellable: boolean
+  imageUrl?: string
+  // taxExempt: boolean
+  basePrice?: number
+  sku?: string
+  barcode?: string
+  stockQuantity?: number
+  lowStockThreshold?: number
+  createdAt: string
+  updatedAt: string
+}
+
+export interface ProductState {
+  product: Product | null;
+  products: ProductList[];
+  isLoading: boolean;
+  error: string | null;
+  statusMessage: string | null;
 }

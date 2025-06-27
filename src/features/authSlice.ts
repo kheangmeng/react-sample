@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
-import { handleLogin } from '../../api/authApi';
-import type { AuthUser, AuthState } from '../../types';
+import { handleLogin } from '../api/authApi';
+import type { AuthUser, AuthState } from '../types';
 
 const initialState: AuthState = {
   isAuthenticated: false,

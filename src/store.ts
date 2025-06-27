@@ -1,6 +1,6 @@
 // src/app/storeRTK.ts
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import authReducer from './features/auth/authSlice'; // Import your auth slice`
+import authReducer from './features/authSlice'; // Import your auth slice`
 // import authReducerRTK from '../features/auth/authSliceRTK'; // Import your auth slice
 // Import other reducers if you have them
 // import userReducer from '../features/user/userSlice'; // Example

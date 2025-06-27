@@ -3,8 +3,6 @@ export interface Category {
   parentCategoryId?: number
   description?: string
   isActive: boolean
-  createdAt: string
-  updatedAt: string
 }
 export interface CategoryResponse {
   id: number
@@ -14,4 +12,12 @@ export interface CategoryResponse {
   isActive: boolean
   createdAt: string
   updatedAt: string
+}
+
+export interface CategoryState {
+  category: Category | null;
+  categories: CategoryResponse[];
+  isLoading: boolean;
+  error: string | null;
+  statusMessage: string | null;
 }
