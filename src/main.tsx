@@ -13,12 +13,10 @@ import ListProductPage from './pages/products/ListProductPage.tsx';
 import CreateProductPage from './pages/products/CreateProductPage.tsx';
 import EditProductPage from './pages/products/EditProductPage.tsx';
 
-console.log('HCHC', import.meta.env.VITE_ENV);
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
         <Routes>
           {/* <Route path="/*" element={<GuestLayout />} /> */}
           <Route path='/' element={<GuestLayout />}>
