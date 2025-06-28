@@ -22,8 +22,8 @@ export const createProduct = createAsyncThunk(
   }
 );
 
-export const fetchCategories = createAsyncThunk(
-  'product/fetchCategories',
+export const fetchProducts = createAsyncThunk(
+  'product/fetchProducts',
   async (pagination: Pagination, { rejectWithValue }) => {
     try {
       const response = await handleFetchProducts(pagination);
@@ -59,17 +59,17 @@ const authSlice = createSlice({
         state.error = action.payload as string;
       })
 
-      .addCase(fetchCategories.pending, (state) => {
+      .addCase(fetchProducts.pending, (state) => {
         state.isLoading = true;
         state.error = null;
         state.statusMessage = null;
       })
-      .addCase(fetchCategories.fulfilled, (state, action: PayloadAction<{ products: ProductList[], message: string }>) => {
+      .addCase(fetchProducts.fulfilled, (state, action: PayloadAction<{ products: ProductList[], message: string }>) => {
         state.isLoading = false;
         state.products = action.payload.products;
         state.statusMessage = action.payload.message;
       })
-      .addCase(fetchCategories.rejected, (state, action) => {
+      .addCase(fetchProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
       });

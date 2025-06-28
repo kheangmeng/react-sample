@@ -50,8 +50,10 @@ const authSlice = createSlice({
         state.error = null;
         state.statusMessage = null;
       })
-      .addCase(createCategory.fulfilled, (state, action: PayloadAction<{ message: string }>) => {
+      .addCase(createCategory.fulfilled, (state, action: PayloadAction<{ category: CategoryResponse, message: string }>) => {
         state.isLoading = false;
+        // state.category = action.payload.category;
+        state.categories = [...state.categories, action.payload.category]
         state.statusMessage = action.payload.message;
       })
       .addCase(createCategory.rejected, (state, action) => {

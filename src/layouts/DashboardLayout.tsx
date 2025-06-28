@@ -3,8 +3,12 @@ import { Outlet } from "react-router";
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { createTheme } from '@mui/material/styles';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import DiscountIcon from '@mui/icons-material/Discount';
+import PercentIcon from '@mui/icons-material/Percent';
+import CategoryIcon from '@mui/icons-material/Category';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import MoveToInboxIcon from '@mui/icons-material/MoveToInbox';
+import ArticleIcon from '@mui/icons-material/Article';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import {
   DashboardLayout,
@@ -18,14 +22,34 @@ const NAVIGATION: Navigation = [
     title: 'Main items',
   },
   {
-    segment: 'dashboard',
-    title: 'Dashboard',
-    icon: <DashboardIcon />,
+    segment: 'product',
+    title: 'Product',
+    icon: <MoveToInboxIcon />,
   },
   {
-    segment: 'orders',
-    title: 'Orders',
-    icon: <ShoppingCartIcon />,
+    segment: 'discount',
+    title: 'Discount',
+    icon: <DiscountIcon />,
+  },
+  {
+    segment: 'promotion',
+    title: 'Promotion',
+    icon: <PercentIcon />,
+  },
+  {
+    segment: 'category',
+    title: 'Category',
+    icon: <CategoryIcon />,
+  },
+  {
+    segment: 'supplier',
+    title: 'Supplier',
+    icon: <LocalShippingIcon />,
+  },
+  {
+    segment: 'report',
+    title: 'Report',
+    icon: <ArticleIcon />,
   },
 ];
 
@@ -57,11 +81,11 @@ function PageContent() {
   return (
     <Box
       sx={{
-        py: 4,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
+        px: 4,
+        // display: 'flex',
+        // flexDirection: 'column',
+        // alignItems: 'center',
+        // textAlign: 'center',
       }}
     >
       <Outlet />

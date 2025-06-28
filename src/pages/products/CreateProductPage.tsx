@@ -1,3 +1,8 @@
+import ProductForm from "../../components/forms/ProductForm"
+
 export default function CreateProductPage() {
-  return <h1>Create Product Page</h1>
+  return <div>
+    <h1>Create Product Page</h1>
+    <ProductForm />
+  </div>
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import type { RootState, AppDispatch } from '../../store'; // Adjust the import path as necessary
-import { loginUser } from '../../features/authSlice'; // Adjust the import path as necessary
+import type { RootState, AppDispatch } from '../../store';
+import { loginUser } from '../../features/authSlice';
 import { TextField } from "@mui/material"
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
