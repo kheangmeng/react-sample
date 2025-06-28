@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { Outlet } from "react-router";
+import { useSelector } from 'react-redux';
+import type { RootState } from '../store';
+import { Outlet, Navigate } from "react-router";
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { createTheme } from '@mui/material/styles';
@@ -9,12 +10,12 @@ import CategoryIcon from '@mui/icons-material/Category';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import MoveToInboxIcon from '@mui/icons-material/MoveToInbox';
 import ArticleIcon from '@mui/icons-material/Article';
-import { AppProvider } from '@toolpad/core/AppProvider';
+import { ReactRouterAppProvider } from '@toolpad/core/react-router';
 import {
   DashboardLayout,
   ThemeSwitcher,
 } from '@toolpad/core/DashboardLayout';
-import type { Navigation, Router } from '@toolpad/core/AppProvider';
+import type { Navigation } from '@toolpad/core/AppProvider';
 
 const NAVIGATION: Navigation = [
   {
@@ -22,7 +23,7 @@ const NAVIGATION: Navigation = [
     title: 'Main items',
   },
   {
-    segment: 'product',
+    segment: 'dashboard/products',
     title: 'Product',
     icon: <MoveToInboxIcon />,
   },
@@ -94,22 +95,19 @@ function PageContent() {
 }
 
 export default function DashboardLayoutAccountSidebar() {
-  const [pathname, setPathname] = React.useState('/dashboard');
-
-  const router = React.useMemo<Router>(() => {
-    return {
-      pathname,
-      searchParams: new URLSearchParams(),
-      navigate: (path) => setPathname(String(path)),
-    };
-  }, [pathname]);
+  // const dispatch: AppDispatch = useDispatch<AppDispatch>();
+  const { isAuthenticated, isLoading } = useSelector((state: RootState) => state.auth);
+  if(isLoading && !isAuthenticated) {
+    return <div>Checking authentication...</div>
+  }
+  if(!isAuthenticated) {
+    return <Navigate to={'/login'} replace />
+  }
 
   return (
-      <AppProvider
+      <ReactRouterAppProvider
         navigation={NAVIGATION}
-        router={router}
         theme={theme}
-
       >
         <DashboardLayout
           slots={{
@@ -118,6 +116,6 @@ export default function DashboardLayoutAccountSidebar() {
         >
           <PageContent />
         </DashboardLayout>
-      </AppProvider>
+      </ReactRouterAppProvider>
   );
 }

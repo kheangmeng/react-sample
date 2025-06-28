@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '../../store';
-import { loginUser } from '../../features/authSlice';
+import { loginUser, clearAuthMessages } from '../../features/authSlice';
 import { TextField } from "@mui/material"
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -10,9 +11,17 @@ import CardContent from '@mui/material/CardContent';
 
 export default function LoginForm() {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const { isLoading, error, statusMessage } = useSelector((state: RootState) => state.auth);
+  const { isAuthenticated, isLoading, error, statusMessage } = useSelector((state: RootState) => state.auth);
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    }
+    return () => { dispatch(clearAuthMessages()); };
+  }, [isAuthenticated, navigate, dispatch]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

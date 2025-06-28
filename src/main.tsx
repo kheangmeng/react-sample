@@ -19,9 +19,10 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
         <Routes>
           {/* <Route path="/*" element={<GuestLayout />} /> */}
+          <Route index element={<App />} />
+          <Route path="about" element={<About />} />
+
           <Route path='/' element={<GuestLayout />}>
-            <Route index element={<App />} />
-            <Route path="about" element={<About />} />
             <Route path="login" element={<Login />} />
           </Route>
 

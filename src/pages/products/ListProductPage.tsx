@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '../../store';
 import { fetchProducts } from '../../features/productSlice';
@@ -12,11 +13,12 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
 export default function ListProductPage() {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const { products } = useSelector((state: RootState) => state.product);
-  dispatch(fetchProducts({page: 1, limit: 10}))
+  React.useEffect(() => {
+    dispatch(fetchProducts({ page: 1, limit: 10 }));
+  }, [dispatch]);
 
   return <div>
     <h1>List Products Page</h1>
@@ -64,7 +66,9 @@ export default function ListProductPage() {
               </TableCell>
             </TableRow>
           )) :
-          <div style={{ padding: '12px' }}>Loading...</div>
+          <TableRow>
+            <TableCell align="right">Loading...</TableCell>
+          </TableRow>
         }
         </TableBody>
       </Table>

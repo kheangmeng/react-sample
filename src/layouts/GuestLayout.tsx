@@ -1,6 +1,17 @@
-import { Outlet } from "react-router";
+import { Outlet, Navigate, useLocation } from "react-router";
+import { useSelector } from 'react-redux';
+import type { RootState } from '../store';
 
 export default function GuestLayout() {
+  const location = useLocation();
+  const { isAuthenticated, isLoading } = useSelector((state: RootState) => state.auth);
+  if(isLoading && !isAuthenticated) {
+    return <div>Loading...</div>
+  }
+  if(!isAuthenticated && location.pathname !== '/login') {
+    return <Navigate to="/login" replace />
+  }
+
   return (
     <div className="flex flex-col h-screen">
       <header className="bg-gray-800 text-white p-4">
