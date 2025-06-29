@@ -34,13 +34,23 @@ export default function LoginForm() {
     <form onSubmit={(e) => handleSubmit(e)}>
       <Grid container spacing={2}>
         <Grid size={12}>
-          <TextField fullWidth id="outlined-basic" label="Email" variant="outlined"
+          <TextField fullWidth label="Email" variant="outlined"
             value={email} onChange={(e) => setEmail(e.target.value)}
+            error={!email}
+            helperText={!email && 'Email is required'}
           />
         </Grid>
         <Grid size={12}>
-          <TextField fullWidth id="outlined-basic" label="Password" variant="outlined" type="password"
+          <TextField fullWidth label="Password" variant="outlined" type="password"
             value={password} onChange={(e) => setPassword(e.target.value)}
+            error={!password || password.length < 8}
+            helperText={
+              !password
+                ? 'Password is required'
+                : password.length < 8
+                  ? 'Password minimum 8 characters'
+                  : ''
+            }
           />
         </Grid>
         <Grid container size={12}
