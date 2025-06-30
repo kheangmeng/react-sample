@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from '../../store';
 import { loginUser, clearAuthMessages } from '../../features/authSlice';
+import { isEmail } from '../../utilities/validator'
 import { TextField } from "@mui/material"
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -36,8 +37,14 @@ export default function LoginForm() {
         <Grid size={12}>
           <TextField fullWidth label="Email" variant="outlined"
             value={email} onChange={(e) => setEmail(e.target.value)}
-            error={!email}
-            helperText={!email && 'Email is required'}
+            error={!email || !isEmail(email)}
+            helperText={
+              !email
+                ? 'Email is required'
+                : !isEmail(email)
+                    ? 'Invalid Email address'
+                    : ''
+            }
           />
         </Grid>
         <Grid size={12}>
